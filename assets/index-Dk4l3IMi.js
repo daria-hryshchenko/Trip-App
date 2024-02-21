@@ -1836,4 +1836,4 @@ Error generating stack: `+o.message+`
     background: linear-gradient(transparent, #2c259a);
     border-radius: 7px;
   }
-`;cl.createRoot(document.getElementById("root")).render(k.jsx(Ze.StrictMode,{children:k.jsxs(dw,{basename:"/trip-app/",children:[k.jsx($I,{}),k.jsx(FI,{})]})}));
+`;cl.createRoot(document.getElementById("root")).render(k.jsx(Ze.StrictMode,{children:k.jsxs(dw,{basename:"/Trip-App/",children:[k.jsx($I,{}),k.jsx(FI,{})]})}));
