@@ -27,6 +27,7 @@ import { CountDown } from '../../components/CountDown/CountDown';
 import { WeatherData, WeatherToday, TripI } from '../../assets/interfaces/index';
 
 const keyApi: string = import.meta.env.VITE_API_KEY_WEATHER;
+const mockApiKey: string = import.meta.env.VITE_API_KEY_MOCKAPI;
 
 export const HomePage: FC = () => {
   const [trips, setTrips] = useState<TripI[]>([]);
@@ -44,7 +45,7 @@ export const HomePage: FC = () => {
 
   useEffect(() => {
     axios
-      .get<TripI[]>('https://65d13dbaab7beba3d5e4371f.mockapi.io/trip')
+      .get<TripI[]>(`https://${mockApiKey}.mockapi.io/trip`)
       .then((res) => {
         setTrips(res.data);
       })
