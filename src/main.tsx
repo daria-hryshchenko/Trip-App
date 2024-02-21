@@ -6,7 +6,7 @@ import GlobalStyle from './GlobalStyles/GlobalStyles';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Trip-App/">
+    <BrowserRouter>
       <GlobalStyle />
       <App />
     </BrowserRouter>
