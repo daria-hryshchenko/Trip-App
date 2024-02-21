@@ -1,14 +1,6 @@
 import { initializeApp, FirebaseApp } from 'firebase/app';
 import { getAuth, Auth } from 'firebase/auth';
-
-interface FirebaseConfig {
-  apiKey: string;
-  authDomain: string;
-  projectId: string;
-  storageBucket: string;
-  messagingSenderId: string;
-  appId: string;
-}
+import { FirebaseConfig } from '../assets/interfaces/index';
 
 const firebaseConfig: FirebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,

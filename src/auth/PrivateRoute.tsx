@@ -1,10 +1,7 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 import { UserAuth } from './AuthContext';
-
-interface PrivateRouteProps {
-  children: ReactNode;
-}
+import { PrivateRouteProps } from '../assets/interfaces/index';
 
 const PrivateRoute: FC<PrivateRouteProps> = ({ children }) => {
   const { user } = UserAuth();

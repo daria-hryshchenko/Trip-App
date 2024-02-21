@@ -1,21 +1,12 @@
-import { createContext, FC, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, FC, useContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, signInWithRedirect, signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
-
-interface AuthContextType {
-  googleSignIn: () => void;
-  logOut: () => void;
-  user: any; // Modify the type according to your user object structure
-}
+import { AuthContextType, AuthContextProviderProps } from '../assets/interfaces/index';
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-interface AuthContextProviderProps {
-  children: ReactNode;
-}
-
 export const AuthContextProvider: FC<AuthContextProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<any>({}); // Modify the type according to your user object structure
+  const [user, setUser] = useState<any>({});
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -41,7 +32,6 @@ export const AuthContextProvider: FC<AuthContextProviderProps> = ({ children }) 
 };
 
 export const UserAuth = () => {
-  // return useContext(AuthContext);
   const context = useContext(AuthContext);
   if (!context) {
     throw new Error('useUserAuth must be used within an AuthContextProvider');
